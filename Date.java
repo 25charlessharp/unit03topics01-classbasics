@@ -2,6 +2,13 @@ public class Date {
     private int month;
     private int day;
     private int year;
+
+    // NOTE: always put constructor between instance variables and instance methods
+    public Date(int theMonth, int theDay, int theYear){
+        month = theMonth;
+        day = theDay;
+        year = theYear;
+    }
     
     public int getMonth(){
         return month;
@@ -15,11 +22,7 @@ public class Date {
         return year;
     }
 
-    public Date(int theMonth, int theDay, int theYear){
-        month = theMonth;
-        day = theDay;
-        year = theYear;
-    }
+    
     public String toString(){
         String result = "";
         if(month % 10 == month){
@@ -32,6 +35,7 @@ public class Date {
         }
         result += day;
         result += "/";
+        // TODO: add some logic to potentially pad the year so it's always 4 digits long
         result += year;
         return result;
     }
