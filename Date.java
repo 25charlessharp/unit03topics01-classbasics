@@ -3,7 +3,7 @@ public class Date {
     private int day;
     private int year;
 
-    // NOTE: always put constructor between instance variables and instance methods
+    // Constructor
     public Date(int theMonth, int theDay, int theYear){
         month = theMonth;
         day = theDay;
@@ -35,12 +35,20 @@ public class Date {
         }
         result += day;
         result += "/";
-        // TODO: add some logic to potentially pad the year so it's always 4 digits long
+        if(year < 1000){
+            result += "0";
+        }
+        if(year < 100){
+            result += "0";
+        }
+        if(year < 10){
+            result += "0";
+        }
         result += year;
         return result;
     }
     public static void main(String[] args) {
-        Date d1 = new Date(8,15,2006);
+        Date d1 = new Date(8,15,21);
         Date d2 = new Date(3,1,2023);
         Date d3 = new Date(11, 26, 2011);
         
